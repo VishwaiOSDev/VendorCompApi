@@ -1,0 +1,42 @@
+
+@base_url = http://localhost:3000/api/user
+@jwt = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA4YjcwN2Y1LTQ4ODktNDM2NC04OTM1LTA1ZWFlZDQ1OWY0YiIsImlhdCI6MTYxOTA4Mzg2MCwiZXhwIjoxNjIxNjc1ODYwfQ.LuSlSlcFQX4Y1R8hvHiM0G1iqCM7pSOwaKIXar6-OxQ
+
+### User Login
+POST {{base_url}}/login
+Content-Type: application/json
+
+{
+    "email" : "vendor@gmail.com",
+    "password"  : "123456"
+}
+
+
+### User Register
+POST {{base_url}}/register
+Content-Type: application/json
+
+{
+    "email" : "vendor@gmail.com",
+    "password" : "123456"
+}
+
+
+
+### Products Insert
+POST {{base_url}}/prod
+Content-Type: application/json
+auth-token : {{jwt}}
+
+{
+    "prodname": "Google",
+    "price": 12000,
+    "gstamount": 300,
+    "deliverycharge": 50,
+    "offer": 20
+}
+
+### Get all Products
+GET  {{base_url}}/all
+Content-Type: application/json
+
